@@ -1,12 +1,12 @@
-export default function ListItem() {
+export default function ListItem(props) {
   return (
     <div className="list-item">
-      <div className="item-icon">LLL</div>
+      <div className="item-icon">{props.name.match(/[A-Z]/g).join("")}</div>
       <div className="item-text">
-        <div className="name">Name</div>
-        <div className="category">Category</div>
+        <div className="name">{props.name}</div>
+        <div className="category">{props.category}</div>
       </div>
-      <div>Rating</div>
+      <div>{props.rating}</div>
     </div>
   );
 }
