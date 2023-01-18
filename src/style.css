@@ -1,5 +1,7 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Lucida Grande", "Segoe UI";
+
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -38,15 +40,18 @@ h1 {
   line-height: 48px;
   letter-spacing: 0em;
   text-align: left;
+  padding-left: 40px;
 }
 
 form {
   width: 560px;
   height: 352px;
-  left: 40px;
-  top: 168px;
+  top: 160px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
 }
 
 label {
@@ -58,6 +63,7 @@ label {
 }
 
 input {
+  box-sizing: border-box;
   height: 72px;
   width: 437px;
   left: 163px;
@@ -68,6 +74,7 @@ input {
   line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
+  padding-left: 24px;
 }
 
 select {
@@ -76,7 +83,7 @@ select {
 
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+  box-sizing: border-box;
   height: 72px;
   width: 437px;
   left: 163px;
@@ -87,7 +94,7 @@ select {
   line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
-
+  padding-left: 24px;
   appearance: none;
 }
 
@@ -170,11 +177,15 @@ button {
 }
 
 .list-item {
+  padding: 0px 40px 0px 40px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 64px 300px 0.5fr;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 20px;
+  width: 640px;
+  height: 129px;
 }
 
 .item-icon {
@@ -184,11 +195,10 @@ button {
   height: 64px;
   width: 64px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: calc(1vw + 1vh + 0.5vmin);
   color: #ffffff;
   background-color: #61a0ff;
   border-radius: 64px;
-  margin-right: 24px;
 }
 
 .item-text {
@@ -196,7 +206,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-right: 83px;
+  margin-right: 0px;
 }
 
 .name {
