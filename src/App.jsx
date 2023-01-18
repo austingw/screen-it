@@ -14,7 +14,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Screen it</h1>
+      <div className="app-title">
+        <h1>Screen it</h1>
+        <div className="line" />
+      </div>
       <MovieForm />
       <div className="movie-list">{movieList}</div>
     </div>
