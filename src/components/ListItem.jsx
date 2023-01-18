@@ -1,3 +1,7 @@
+import { Rating } from "react-simple-star-rating";
+import EmptyStar from "./EmptyStar";
+import FilledStar from "./FilledStar";
+
 export default function ListItem(props) {
   return (
     <div className="list-item">
@@ -15,7 +19,14 @@ export default function ListItem(props) {
         <div className="name">{props.name}</div>
         <div className="category">{props.category}</div>
       </div>
-      <div>{props.rating}</div>
+      <div>
+        <Rating
+          initialValue={props.rating}
+          readonly={true}
+          emptyIcon={<EmptyStar />}
+          fillIcon={<FilledStar />}
+        />
+      </div>
     </div>
   );
 }
