@@ -37,10 +37,10 @@ body {
 h1 {
   font-size: 40px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 8px;
   letter-spacing: 0em;
   text-align: left;
-  padding-left: 40px;
+  padding: 40px;
 }
 
 form {
@@ -77,9 +77,12 @@ input {
   padding-left: 24px;
 }
 
+input::placeholder {
+  color: #aaaaaa;
+}
+
 select {
   display: block;
-  padding-left: 3px;
 
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
@@ -96,14 +99,13 @@ select {
   text-align: left;
   padding-left: 24px;
   appearance: none;
+  color: #aaaaaa;
 }
 
 select.arrow {
-  background-image: linear-gradient(45deg, transparent 50%, #cccccc 50%),
-    linear-gradient(135deg, #cccccc 50%, transparent 50%);
-  background-position: calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 5px 1.5em;
+  background-image: url("./assets/caret.svg");
+  background-position: calc(100% - 20px) calc(1em + 6px), 0.5em;
+  background-size: 16px;
   background-repeat: no-repeat;
 }
 
@@ -135,6 +137,9 @@ button {
 }
 
 .App {
+  margin-top: 40px;
+  margin-bottom: 40px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,7 +200,7 @@ button {
   height: 64px;
   width: 64px;
   font-weight: 500;
-  font-size: calc(1vw + 1vh + 0.5vmin);
+  font-size: 24px;
   color: #ffffff;
   background-color: #61a0ff;
   border-radius: 64px;
@@ -215,6 +220,7 @@ button {
 }
 
 .category {
+  margin-top: 6px;
   font-weight: 500;
   font-size: 16px;
   color: #aaaaaa;

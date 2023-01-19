@@ -1,5 +1,5 @@
-import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
+import { Rating } from "react-simple-star-rating";
 import EmptyStar from "./EmptyStar";
 import FilledStar from "./FilledStar";
 
@@ -19,7 +19,7 @@ export default function MovieForm() {
           id="name"
           placeholder="Name of the movie"
           className="form-inputs"
-          name="topText"
+          name="name"
         />
       </div>
       <div className="form-row ">
@@ -27,10 +27,19 @@ export default function MovieForm() {
         <select
           type="text"
           id="category"
-          placeholder="Select a category"
           className="form-inputs arrow"
-          name="bottomText"
-        />
+          name="category"
+          defaultValue="Select"
+        >
+          <option value="" selected hidden>
+            Select a category
+          </option>
+          <option value="Action">Action/Adventure</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Documentary">Documentary</option>
+          <option value="Drama">Drama</option>
+          <option value="Horror/Thriller">Horror/Thriller</option>
+        </select>
       </div>
       <div className="form-row">
         <label>Rating</label>

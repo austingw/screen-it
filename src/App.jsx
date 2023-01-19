@@ -5,8 +5,20 @@ import ListItem from "./components/ListItem";
 import defaultMovies from "./defaultMovies";
 
 function App() {
-  const movieList = defaultMovies.map((movie) => {
-    //Dynamically generate list items with lines between them
+  /*const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    rating: 0,
+  });*/
+
+  const [movieData, setMovieData] = useState(defaultMovies);
+
+  function addMovie(newMovie) {
+    setMovieData(newMovie);
+  }
+
+  const movieList = movieData.map((movie) => {
+    //Dynamically generates list items with lines between them
     if (movie.name !== "The Sandlot") {
       return (
         <>
