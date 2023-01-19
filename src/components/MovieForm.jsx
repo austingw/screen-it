@@ -14,7 +14,6 @@ export default function MovieForm(props) {
           className="form-inputs"
           name="name"
           onChange={props.handleChange}
-          required
         />
       </div>
       <div className="form-row ">
@@ -25,7 +24,6 @@ export default function MovieForm(props) {
           className="form-inputs arrow"
           name="category"
           onChange={props.handleChange}
-          required
         >
           <option value="" hidden>
             Select a category

@@ -28,7 +28,7 @@ body {
 h1 {
   font-size: 40px;
   font-weight: 700;
-  line-height: 8px;
+  line-height: 0px;
   letter-spacing: 0em;
   text-align: left;
   padding: 40px;
@@ -38,7 +38,7 @@ form {
   width: 560px;
   height: 352px;
   top: 160px;
-  padding: 40px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: space-between;
@@ -148,7 +148,7 @@ button:active {
   justify-content: top;
   background-color: #ffffff;
   width: 640px;
-  min-height: 1205px;
+  min-height: 1185px;
   border-radius: 24px;
   box-shadow: 0px 2px 16px 0px #0000001a;
 }
@@ -173,7 +173,7 @@ button:active {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  padding-bottom: 24px;
 }
 
 .movie-list {
@@ -195,7 +195,7 @@ button:active {
   height: 129px;
 }
 
-.item-icon {
+.item-icon1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,6 +203,35 @@ button:active {
   width: 64px;
   font-weight: 500;
   font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  background-color: #61a0ff;
+  border-radius: 64px;
+}
+
+.item-icon2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 64px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  background-color: #61a0ff;
+  border-radius: 64px;
+}
+
+.item-icon3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 64px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29px;
   color: #ffffff;
   background-color: #61a0ff;
   border-radius: 64px;

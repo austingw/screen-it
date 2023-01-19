@@ -5,7 +5,18 @@ import FilledStar from "./FilledStar";
 export default function ListItem(props) {
   return (
     <div className="list-item">
-      <div className="item-icon">
+      <div
+        className={
+          //Dynamic class name w/ font sizes based on acronym length
+          `item-icon${
+            props.name
+              .replace("The", "")
+              .replace("the", "")
+              .match(/[A-Z]/g)
+              .join("").length
+          }`
+        }
+      >
         {
           //Chained string methods turn the movie name into an acronym
           props.name

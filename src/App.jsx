@@ -27,13 +27,10 @@ function App() {
         rating: ratingValue,
       };
     });
-    console.log(newMovie);
   }
 
-  function addMovie(movie) {
+  function addMovie() {
     event.preventDefault();
-    console.log(newMovie);
-    console.log(movieData);
     setMovieData((prevList) => [newMovie, ...prevList]);
   }
 
