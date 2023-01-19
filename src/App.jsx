@@ -1,20 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import MovieForm from "./components/MovieForm";
 import ListItem from "./components/ListItem";
 import defaultMovies from "./defaultMovies";
 
 function App() {
-  /*const [formData, setFormData] = useState({
+  const [movieData, setMovieData] = useState(defaultMovies);
+  const [ratingValue, setRatingValue] = useState(0);
+  const [newMovie, setNewMovie] = useState({
     name: "",
     category: "",
     rating: 0,
-  });*/
+  });
 
-  const [movieData, setMovieData] = useState(defaultMovies);
+  const handleRating = (rate) => {
+    setRatingValue(rate);
+    handleChange();
+  };
 
-  function addMovie(newMovie) {
-    setMovieData(newMovie);
+  function handleChange() {
+    const { name, value } = event.target;
+    setNewMovie((movieData) => {
+      return {
+        ...movieData,
+        [name]: value,
+        rating: ratingValue,
+      };
+    });
+    console.log(newMovie);
+  }
+
+  function addMovie(movie) {
+    event.preventDefault();
+    console.log(newMovie);
+    console.log(movieData);
+    setMovieData((prevList) => [newMovie, ...prevList]);
   }
 
   const movieList = movieData.map((movie) => {
@@ -47,9 +67,12 @@ function App() {
         <h1>Screen it</h1>
         <div className="line" />
       </div>
-      <MovieForm />
+      <MovieForm
+        handleSubmit={addMovie}
+        handleRating={handleRating}
+        handleChange={handleChange}
+      />
       <div className="line" />
-
       <div className="movie-list">{movieList}</div>
     </div>
   );

@@ -1,15 +1,8 @@
-import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import EmptyStar from "./EmptyStar";
 import FilledStar from "./FilledStar";
 
-export default function MovieForm() {
-  const [ratingValue, setRatingValue] = useState(0);
-
-  const handleRating = (rate) => {
-    setRatingValue(rate);
-  };
-
+export default function MovieForm(props) {
   return (
     <form>
       <div className="form-row">
@@ -20,6 +13,8 @@ export default function MovieForm() {
           placeholder="Name of the movie"
           className="form-inputs"
           name="name"
+          onChange={props.handleChange}
+          required
         />
       </div>
       <div className="form-row ">
@@ -29,9 +24,10 @@ export default function MovieForm() {
           id="category"
           className="form-inputs arrow"
           name="category"
-          defaultValue="Select"
+          onChange={props.handleChange}
+          required
         >
-          <option value="" selected hidden>
+          <option value="" hidden>
             Select a category
           </option>
           <option value="Action">Action/Adventure</option>
@@ -44,13 +40,15 @@ export default function MovieForm() {
       <div className="form-row">
         <label>Rating</label>
         <Rating
-          disableFillHover
-          onClick={handleRating}
+          disableFillHover={true}
+          onClick={props.handleRating}
           emptyIcon={<EmptyStar />}
           fillIcon={<FilledStar />}
         />
       </div>
-      <button className="submit-btn">Add Movie</button>
+      <button className="submit-btn" onClick={props.handleSubmit}>
+        Add Movie
+      </button>
     </form>
   );
 }
